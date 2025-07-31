@@ -1,141 +1,39 @@
 # Verilog Compiler IDE (Flask + React)
 
-This is a simple web-based Verilog IDE. You can write Verilog code in the browser, compile it using a Flask backend (with `iverilog`), and see the output instantly. It helps in learning and testing Verilog HDL quickly.
+A sleek and modern web-based Verilog playground. Write, compile, and debug Verilog code directly in your browser using a beautiful Monaco-powered editor, a Python + Flask backend, and AI-powered suggestions.
 
 ---
 
-## Preview
-![ReactApp-Brave2025-07-2412-07-58-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/0a12193b-49a5-43b6-ab23-31087afce54b)
+## 🚀 Preview
+
+> 🎥 (Optionally embed local demo video/gif here)
+
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend:** React + Monaco Editor
 - **Backend:** Python (Flask)
 - **Compiler:** [Icarus Verilog (iverilog)](http://iverilog.icarus.com/)
+- **AI Assistant:** OpenRouter API with Mistral LLM
 
 ---
 
-## Features
+## ✨ Features
 
-- Verilog code editor with syntax highlighting
-- Compile and run Verilog code with `iverilog` and `vvp`
-- Displays errors with line numbers and suggestions
-- Shows output from the simulation
-- Keyboard shortcut `Ctrl+Enter` to compile
-- Simple and responsive UI
-
----
-
-## Local Setup
-
-### 1. Backend (Flask)
-
-#### Prerequisites:
-- Python 3.8 or higher
-- `iverilog` installed and available in system PATH
-
-#### Steps:
-```bash
-cd backend
-pip install flask flask-cors
-python app.py
-````
-
-By default, it runs at `http://localhost:5000`
+- 💻 Monaco-based Verilog code editor (with syntax highlighting)
+- ⚡ Compile and simulate Verilog via `iverilog` + `vvp`
+- 🧠 Built-in **AI Debugger** (via OpenRouter's Mistral LLM)
+- 🧾 Friendly compiler output with **line-based error messages** and **suggestions**
+- ⌨️ `Ctrl + Enter` keyboard shortcut to run code
+- 🔧 Draggable, resizable panes: Editor | Output | AI
+- 🖤 Beautiful dark theme with responsive layout
 
 ---
 
-### 2. Frontend (React)
-
-#### Prerequisites:
-
-* Node.js (v18 or newer)
-* npm or yarn
-
-#### Steps:
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The frontend runs at `http://localhost:3000` and calls the backend at port 5000.
-
----
-
-## API Details
-
-**Endpoint:** `POST /compile`
-
-**Request Body:**
-
-```json
-{
-  "code": "// Your Verilog code here"
-}
-```
-
-**Responses:**
-
-* Success:
-
-  ```json
-  { "status": "success", "stdout": "...", "stderr": "..." }
-  ```
-
-* Compilation Error:
-
-  ```json
-  { "status": "compile_error", "errors": [...], "raw": "..." }
-  ```
-
-* Runtime Error:
-
-  ```json
-  { "status": "runtime_error", "stdout": "...", "stderr": "..." }
-  ```
-
----
-
-## Example Verilog Code
+## 🧪 Sample Code
 
 ```verilog
-module test;
-  initial begin
-    $display("Hello Verilog!");
-  end
-endmodule
-```
-
----
-
-## Project Structure
-
-```
-verilog-IDE/
-├── backend/
-│   └── app.py          # Flask backend
-├── frontend/
-│   ├── App.js          # React frontend
-│   └── App.css         # Styles
-└── README.md           # This file
-```
-
----
-
-## Known Limitations
-
-* No code history or file saving
-* Limited to basic Verilog (no waveform viewer or debugging tools)
-* Requires backend to run locally
-
----
-
-## Sample Verlilog CODE
-
-```Velilog
 // 4-bit Ripple Carry Adder
 
 module full_adder (
@@ -159,7 +57,6 @@ module ripple_carry_adder_4bit (
     full_adder FA3 (A[3], B[3], c3,   Sum[3], Cout);
 endmodule
 
-// Testbench
 module testbench;
     reg [3:0] A, B;
     reg Cin;
@@ -182,8 +79,94 @@ module testbench;
         $finish;
     end
 endmodule
+```
+
+---
+
+## ⚙️ Local Setup
+
+### 🔹 Backend (Flask)
+
+**Prerequisites:**
+- Python 3.8+
+- `iverilog` installed and in system PATH
+
+**Steps:**
+```bash
+cd backend
+pip install flask flask-cors
+python app.py
+```
+> Runs at `http://localhost:5000`
+
+---
+
+### 🔹 Frontend (React)
+
+**Prerequisites:**
+- Node.js v18+
+- npm / yarn
+
+**Steps:**
+```bash
+cd frontend
+npm install
+npm start
+```
+> Runs at `http://localhost:3000`
+
+---
+
+## 🧩 API Details
+
+**POST** `/compile`
+
+**Request:**
+```json
+{
+  "code": "// Your Verilog code here"
+}
+```
+
+**Responses:**
+- ✅ **Success**
+```json
+{ "status": "success", "stdout": "...", "stderr": "..." }
+```
+- ❌ **Compilation Error**
+```json
+{ "status": "compile_error", "errors": [...], "raw": "..." }
+```
+- ⚠️ **Runtime Error**
+```json
+{ "status": "runtime_error", "stdout": "...", "stderr": "..." }
+```
+
+---
+
+## 🗂️ Project Structure
 
 ```
-## License
+verilog-IDE/
+├── backend/
+│   └── app.py          # Flask backend
+├── frontend/
+│   ├── App.js          # React frontend
+│   ├── App.css         # Styles
+│   └── ...
+└── README.md           # This file
+```
+
+---
+
+## ⚠️ Known Limitations
+
+- No support for waveform viewers or testbenches with GTKWave
+- No user login or file persistence
+- Requires backend running locally
+
+---
+
+## 📜 License
 
 MIT License © 2025 [Arjun Jagdale](https://github.com/ArjunJagdale)
