@@ -5,7 +5,7 @@ A sleek and modern web-based Verilog playground. Write, compile, and debug Veril
 ---
 
 ## 🚀 Preview
-![ezgif-57738746cb5181](https://github.com/user-attachments/assets/eed8280d-6d50-4295-950b-c6db230d6c51)
+![ezgif-52ef36035b9646](https://github.com/user-attachments/assets/c93691a2-0592-435c-8813-fe193686594d)
 
 ---
 
