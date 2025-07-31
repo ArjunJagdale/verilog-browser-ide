@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #1e1e1e;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  color: #f0f0f0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header & Footer */
+.app-header,
+.app-footer {
+  background: #20232a;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+/* Main layout */
+.main-split {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Panels styling */
+.editor-pane,
+.output-pane,
+.ai-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editor-pane {
+  background: #2a2d33;
+  border-right: 1px solid #343a40;
+}
+
+.output-pane {
+  background: #181c23;
+  border-right: 1px solid #343a40;
+}
+
+.ai-pane {
+  background: #0f1117;
+  color: #e9e9e9;
+}
+
+/* Resizers */
+.resizer,
+.resizer-ai {
+  width: 5px;
+  cursor: col-resize;
+  background-color: #333;
+  position: relative;
+  z-index: 10;
+}
+
+.resizer:hover,
+.resizer-ai:hover {
+  background-color: #555;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+/* Run Button */
+.run-button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #129358;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.2s;
+}
+
+.run-button:hover {
+  background: #16b86a;
+}
+
+/* Status + Output */
+.status-bar {
+  padding: 10px 12px;
+  background: #21242d;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.output-console {
+  flex: 1;
+  padding: 14px;
+  background: #15181c;
+  color: #00ff88;
+  white-space: pre-wrap;
+  border-radius: 5px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.6);
+  overflow: auto;
+  font-size: 0.95rem;
+}
+
+/* AI Debugger Styles */
+.ai-console {
+  flex: 1;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  padding: 14px;
+  border-radius: 5px;
+  overflow: auto;
+  line-height: 1.5;
+  background-color: #111319;
+  color: #e9e9e9;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.ai-console strong {
+  color: #ffdd57;
+}
+
+.ai-console code {
+  background-color: #1d1f27;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #80ffea;
+}
