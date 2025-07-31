@@ -5,8 +5,7 @@ A sleek and modern web-based Verilog playground. Write, compile, and debug Veril
 ---
 
 ## 🚀 Preview
-
-> 🎥 (Optionally embed local demo video/gif here)
+![ezgif-57738746cb5181](https://github.com/user-attachments/assets/eed8280d-6d50-4295-950b-c6db230d6c51)
 
 ---
 
